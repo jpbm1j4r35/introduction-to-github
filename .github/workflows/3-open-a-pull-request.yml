@@ -45,12 +45,4 @@ jobs:
        npm install remark-cli remark-preset-lint-consistent
        npx remark . --use remark-preset-lint-consistent --frail
        
-      # Update README to close <details id=3> and open <details id=4>
-      # and set STEP to '4'
-      - name: Update to step 4
-        uses: skills/action-update-step@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 3
-          to_step: 4
-          branch_name: my-first-branch
+
