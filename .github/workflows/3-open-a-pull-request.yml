@@ -40,7 +40,11 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
           ref: my-first-branch # Important, as normally `pull_request` event won't grab other branches
-
+   - name: Run markdown lint
+     run: |
+       npm install remark-cli remark-preset-lint-consistent
+       npx remark . --use remark-preset-lint-consistent --frail
+       
       # Update README to close <details id=3> and open <details id=4>
       # and set STEP to '4'
       - name: Update to step 4
